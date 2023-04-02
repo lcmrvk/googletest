@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  lcmrvk_gtest_devcontainer_service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - IMAGE=${IMAGE}
+        - DOCKER_USER=${DOCKER_USER}
+        - DOCKER_USER_PASS=${DOCKER_USER_PASS}
+        - TARGET_DIR=${TARGET_DIR}
+    image: lcmrvk/gtest_devcontainer_img
+    container_name: lcmrvk_gtest_devcontainer
+    volumes:
+      - type: bind
+        source: /home/lcmrvk/projects/others/googletest
+        target: ${TARGET_DIR}
+    tty: true

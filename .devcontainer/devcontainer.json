@@ -1,0 +1,36 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+{
+    "name": "lcmrvk google test",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "lcmrvk_gtest_devcontainer_service",
+    "runServices": [
+        "lcmrvk_gtest_devcontainer_service"
+    ],
+    "workspaceFolder": "/home/mr-robot/projects/googletest",
+    "remoteUser": "mr-robot",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // C++ related
+                "ms-vscode.cpptools-extension-pack",
+                "twxs.cmake",
+                "josetr.cmake-language-support-vscode",
+                "ms-vscode.cmake-tools",
+                "jeff-hykin.better-cpp-syntax",
+                "VisualStudioExptTeam.vscodeintellicode",
+                // Python
+                "ms-python.python",
+                // Utils
+                "mads-hartmann.bash-ide-vscode",
+                "janjoerke.align-by-regex",
+                "xaver.clang-format",
+                "streetsidesoftware.code-spell-checker",
+                "EditorConfig.EditorConfig",
+                "eamodio.gitlens",
+                "stkb.rewrap",
+                "timonwong.shellcheck",
+                "Gruntfuggly.todo-tree"
+            ]
+        }
+    }
+}

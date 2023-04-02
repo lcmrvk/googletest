@@ -1,0 +1,23 @@
+name: devcontainer
+services:
+  lcmrvk_gtest_devcontainer_service:
+    build:
+      context: /home/lcmrvk/projects/others/googletest/.devcontainer
+      dockerfile: Dockerfile
+      args:
+        DOCKER_USER: mr-robot
+        DOCKER_USER_PASS: fsociety
+        IMAGE: ubuntu:20.04
+        TARGET_DIR: /home/mr-robot/projects/googletest
+    container_name: lcmrvk_gtest_devcontainer
+    image: lcmrvk/gtest_devcontainer_img
+    networks:
+      default: null
+    tty: true
+    volumes:
+    - type: bind
+      source: /home/lcmrvk/projects/others/googletest
+      target: /home/mr-robot/projects/googletest
+networks:
+  default:
+    name: devcontainer_default
